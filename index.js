@@ -21,6 +21,7 @@ mongoose
 
         app.use('/api/v1/users', require('./src/routes/user.route'));
         app.use('/api/v1/categories', require('./src/routes/category.route'));
+        app.use('/api/v1/posts', require('./src/routes/post.route'));
 
         app.get('/', (req, res) => {
             let response = buildResp(200, "This API works ! 🎉🎉", [], []);

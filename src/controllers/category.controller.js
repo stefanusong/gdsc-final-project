@@ -15,7 +15,7 @@ const addCategory = (req, res) => {
             res.status(201).send(response);
         })
         .catch(err => {
-            let response = buildResp(400, "Failed to create category", [], err);
+            let response = buildResp(400, "Failed to create category", [], err.message);
             res.status(400).send(response);
         });
 }
@@ -40,7 +40,7 @@ const getAllCategories = (req, res) => {
             }
         })
         .catch(err => {
-            let response = buildResp(400, "Failed to get categories", [], err);
+            let response = buildResp(400, "Failed to get categories", [], err.message);
             res.status(400).send(response);
         });
 }
@@ -62,13 +62,13 @@ const getCategoryById = (req, res) => {
                         res.status(200).send(response);
                     })
                     .catch(err => {
-                        let response = buildResp(400, "Failed to get posts by category id", [], err);
+                        let response = buildResp(400, "Failed to get posts by category id", [], err.message);
                         res.status(400).send(response);
                     });
             }
         })
         .catch(err => {
-            let response = buildResp(400, "Failed to get category", [], err);
+            let response = buildResp(400, "Failed to get category", [], err.message);
             res.status(400).send(response);
         });
 }

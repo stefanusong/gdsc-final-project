@@ -22,7 +22,7 @@ const register = (req, res) => {
             const newUser = new User({ userName, userEmail, userPassword: encryptedPassword });
             newUser.save()
                 .then(() => res.json(buildResp(200, "User registered successfully", { userName, userEmail }, [])))
-                .catch(err => res.status(400).json({ error: 'Error registering new user: ' + err }));
+                .catch(err => res.status(400).json({ error: 'Error registering new user: ' + err.message }));
         }
         );
 };
